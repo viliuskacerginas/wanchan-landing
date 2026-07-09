@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2026       Vilius Kačerginas
+ * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2020-2022  Yomichan Authors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+ 
+/* Generated Overrides for display.css */
+
 /* Variables */
 :root {
     /* Strings */
@@ -69,7 +90,7 @@
     --tag-border-size: calc(1em * (var(--tag-border-size-no-units) / var(--font-size-no-units)));
     --tag-border-style: solid;
     --tag-font-weight: bold;
-    --tag-border-radius: 99px;
+    --tag-border-radius: 10%;
     /* Pill Shape */
 
     --list-padding1: 1.4em;
@@ -414,18 +435,24 @@ button.action-button:active:not(:disabled) {
     border-right: none;
     font-size: 1em;
     min-height: var(--tag-height);
-    margin: calc(1em / var(--font-size-no-units)) 0.375em calc(1em / var(--font-size-no-units)) 0;
 }
 
 .tag-label {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: #66648b;
     border-radius: var(--tag-border-radius);
     padding: calc(2.5em / var(--font-size-no-units)) 0.375em calc(2.5em / var(--font-size-no-units)) 0.375em;
     color: var(--tag-text-color);
     cursor: pointer;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    border: 1px solid var(--wanchan-purple-base);
+    background: none;
+    margin: calc(1em / var(--font-size-no-units)) 0.375em calc(1em / var(--font-size-no-units)) 0;
+}
+
+:root:not([data-theme=light]) .tag-label {
+    border: 1px solid var(--wanchan-amber-dark);
 }
 
 .tag-label-content {

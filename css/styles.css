@@ -604,6 +604,10 @@ a {
     margin-top: 10px;
 }
 
+.animated-kanji {
+    animation: cursor-to-kanji 4s ease-in-out infinite;
+}
+
 @keyframes cursor-to-tag {
     0% {
         transform: translate(23em, -4rem);
@@ -617,11 +621,11 @@ a {
         transform: translate(0, 0);
     }
     51% {
-        transform: translate(0, 0) scale(0.8);
+        transform: translate(0, 0) scale(0.75);
     }
     55% {
         /* Small click animation */
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) scale(1.1);
     }
     60% {
         transform: translate(0, 0);
@@ -637,7 +641,7 @@ a {
 }
 
 /* Highlight effect on netaisyklinga tag when cursor hovers */
-.popup-with-pointer .netaisyklinga-tag {
+.highlight-animation {
     animation: tag-highlight 4s ease-in-out infinite;
 }
 
@@ -842,6 +846,18 @@ a {
     padding: 16px 32px;
     border-radius: 12px;
     transition: all 0.2s ease;
+}
+
+.download-btn-soon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--wanchan-border-dark);
+    border: 1px solid var(--wanchan-border-dark);
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: not-allowed;
 }
 
 .download-btn:hover {

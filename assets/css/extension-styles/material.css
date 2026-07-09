@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2026       Vilius Kačerginas
+ * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2020-2022  Yomichan Authors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+ 
+/* Generated Overrides for material.css */
+
 /* Variables */
 :root {
     /* --- WANCHAN DESIGN SYSTEM --- */
@@ -6,8 +27,13 @@
     --wanchan-amber-light: #fcd34d;
     --wanchan-amber-dark: #d97706;
 
-    --wanchan-purple: #2e003e;
-    --wanchan-purple-light: #5b2175;
+    --wanchan-purple: #7c3aed;
+    --wanchan-purple-light: #a78bfa;
+    --wanchan-purple-lighter: #c4b5fd;
+    --wanchan-purple-lightest: #ede9fe;
+    --wanchan-purple-dark: #6d28d9;
+    --wanchan-purple-darker: #5b21b6;
+    --wanchan-purple-base: #2e003e;
 
     /* Neutrals */
     --wanchan-iron: #888888;
@@ -97,16 +123,16 @@
     --shadow-color-off: rgba(0, 0, 0, 0);
     --shadow-color-light: rgba(0, 0, 0, 0.05);
 
-    /* Actions - Amber */
-    --accent-color: var(--wanchan-amber);
-    --accent-color-light: var(--wanchan-amber-light);
-    --accent-color-lighter: #fde68a;
-    --accent-color-lightest: #fffbeb;
-    --accent-color-dark: var(--wanchan-amber-dark);
+    /* Actions - Purple for Light Mode */
+    --accent-color: var(--wanchan-purple);
+    --accent-color-light: var(--wanchan-purple-light);
+    --accent-color-lighter: var(--wanchan-purple-lighter);
+    --accent-color-lightest: var(--wanchan-purple-lightest);
+    --accent-color-dark: var(--wanchan-purple-dark);
 
-    --accent-color-transparent0: rgba(245, 166, 35, 0);
-    --accent-color-transparent5: rgba(245, 166, 35, 0.05);
-    --accent-color-transparent25: rgba(245, 166, 35, 0.25);
+    --accent-color-transparent0: rgba(124, 58, 237, 0);
+    --accent-color-transparent5: rgba(124, 58, 237, 0.05);
+    --accent-color-transparent25: rgba(124, 58, 237, 0.25);
 
     /* Danger */
     --danger-color: #dc2626; /* Red-600 */
@@ -127,7 +153,7 @@
     --input-background-color: #f3f4f6;
     --input-background-color-dark: #f3f4f6;
     --input-background-color-darker: #e5e7eb;
-    --input-outline-color: var(--wanchan-amber);
+    --input-outline-color: var(--wanchan-purple);
     --input-border-color: var(--wanchan-border-light);
 
     --button-default-text-color: #ffffff;
@@ -143,17 +169,19 @@
     --toggle-track-color: #d1d5db;
     --toggle-knob-color: #ffffff;
 
-    --selectable-indicator-color: rgba(245, 166, 35, 0.1);
+    --selectable-indicator-color: rgba(124, 58, 237, 0.1);
 
     --menu-item-hover-color: #f3f4f6;
     --menu-item-active-color: #e5e7eb;
 }
+
+
 :root[data-theme=dark] {
     --text-color: var(--wanchan-text-primary-dark);
     --text-color-light1: #d1d5db;
     --text-color-light2: #9ca3af;
-    --text-color-light3: #6b7280;
-    --text-color-light4: #4b5563;
+    --text-color-light3: #9096a2;
+    --text-color-light4: #7c8a9c;
 
     --background-color: var(--wanchan-bg-dark);
     --background-color-light: var(--wanchan-surface-dark);
@@ -218,251 +246,78 @@
     line-height: var(--line-height);
     height: 100%;
 }
-body {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    height: 100%;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
 
 
-/* Text styles */
-.light {
-    color: var(--text-color-light2);
-}
-.danger-text {
-    color: var(--danger-color);
-}
-.success-text {
-    color: var(--success-color);
-}
-
-/* Icons */
-.icon {
-    --icon-image: none;
-    --icon-size: contain;
-
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center center;
-    -webkit-mask-mode: alpha;
-    -webkit-mask-size: var(--icon-size);
-    -webkit-mask-image: var(--icon-image);
-    mask-repeat: no-repeat;
-    mask-position: center center;
-    mask-mode: alpha;
-    mask-size: var(--icon-size);
-    mask-image: var(--icon-image);
-}
-.icon.color-icon {
-    -webkit-mask-image: none;
-    mask-image: none;
+/* Material design select */
+select {
+    width: var(--input-width-large);
+    height: var(--input-height);
+    line-height: var(--line-height);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    box-sizing: border-box;
+    padding: 0 0.5em;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url(/images/material-down-arrow.svg);
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: var(--icon-size);
-    background-image: var(--icon-image);
-}
-.icon[data-icon=none]                    { --icon-image: linear-gradient(transparent, transparent); }
-.icon[data-icon=profile]                 { --icon-image: url(../../icons/profile.svg); }
-.icon[data-icon=cog]                     { --icon-image: url(../../icons/cog.svg); }
-.icon[data-icon=palette]                 { --icon-image: url(../../icons/palette.svg); }
-.icon[data-icon=popup]                   { --icon-image: url(../../icons/popup.svg); }
-.icon[data-icon=speaker]                 { --icon-image: url(../../icons/speaker.svg); }
-.icon[data-icon=scanning]                { --icon-image: url(../../icons/scanning.svg); }
-.icon[data-icon=text-parsing]            { --icon-image: url(../../icons/text-parsing.svg); }
-.icon[data-icon=translation]             { --icon-image: url(../../icons/translation.svg); }
-.icon[data-icon=book]                    { --icon-image: url(../../icons/book.svg); }
-.icon[data-icon=note-card]               { --icon-image: url(../../icons/note-card.svg); }
-.icon[data-icon=keyboard]                { --icon-image: url(../../icons/keyboard.svg); }
-.icon[data-icon=backup]                  { --icon-image: url(../../icons/backup.svg); }
-.icon[data-icon=lock]                    { --icon-image: url(../../icons/lock.svg); }
-.icon[data-icon=question-mark]           { --icon-image: url(../../icons/question-mark.svg); }
-.icon[data-icon=popup-size]              { --icon-image: url(../../icons/popup-size.svg); }
-.icon[data-icon=hamburger-menu]          { --icon-image: url(../../icons/hamburger-menu.svg); }
-.icon[data-icon=kebab-menu]              { --icon-image: url(../../icons/kebab-menu.svg); }
-.icon[data-icon=mouse]                   { --icon-image: url(../../icons/mouse.svg); }
-.icon[data-icon=exclamation-point-short] { --icon-image: url(../../icons/exclamation-point-short.svg); }
-.icon[data-icon=magnifying-glass]        { --icon-image: url(../../icons/magnifying-glass.svg); }
-.icon[data-icon=collapse]                { --icon-image: url(../../icons/collapse.svg); }
-.icon[data-icon=expand]                  { --icon-image: url(../../icons/expand.svg); }
-.icon[data-icon=window]                  { --icon-image: url(../../icons/window.svg); }
-.icon[data-icon=cross]                   { --icon-image: url(../../icons/cross.svg); }
-.icon[data-icon=checkmark]               { --icon-image: url(../../icons/checkmark.svg); }
-.icon[data-icon=sentence-parsing]        { --icon-image: url(../../icons/sentence-parsing.svg); }
-.icon[data-icon=question-mark]           { --icon-image: url(../../icons/question-mark.svg); }
-.icon[data-icon=question-mark-circle]    { --icon-image: url(../../icons/question-mark-circle.svg); }
-.icon[data-icon=question-mark-thick]     { --icon-image: url(../../icons/question-mark-thick.svg); }
-.icon[data-icon=left-chevron]            { --icon-image: url(../../icons/left-chevron.svg); }
-.icon[data-icon=right-chevron]           { --icon-image: url(../../icons/right-chevron.svg); }
-.icon[data-icon=up-chevron]              { --icon-image: url(../../icons/up-chevron.svg); }
-.icon[data-icon=down-chevron]            { --icon-image: url(../../icons/down-chevron.svg); }
-.icon[data-icon=double-down-chevron]     { --icon-image: url(../../icons/double-down-chevron.svg); }
-.icon[data-icon=plus-thick]              { --icon-image: url(../../icons/plus-thick.svg); }
-.icon[data-icon=clipboard]               { --icon-image: url(../../icons/clipboard.svg); }
-.icon[data-icon=key]                     { --icon-image: url(../../icons/key.svg); }
-.icon[data-icon=tag]                     { --icon-image: url(../../icons/tag.svg); }
-.icon[data-icon=flag]                    { --icon-image: url(../../icons/flag.svg); }
-.icon[data-icon=accessibility]           { --icon-image: url(../../icons/accessibility.svg); }
-.icon[data-icon=connection]              { --icon-image: url(../../icons/connection.svg); }
-.icon[data-icon=external-link]           { --icon-image: url(../../icons/external-link.svg); }
-.icon[data-icon=monitor]                 { --icon-image: url(../../icons/monitor.svg); }
-.icon[data-icon=material-down-arrow] {
-    --icon-image: url(../../icons/material-down-arrow.svg);
-    --icon-size: var(--material-arrow-dimension2) var(--material-arrow-dimension1);
-}
-.icon[data-icon=material-right-arrow] {
-    --icon-image: url(../../icons/material-right-arrow.svg);
-    --icon-size: var(--material-arrow-dimension1) var(--material-arrow-dimension2);
-}
-
-
-/* Material design button */
-button,
-.button {
-    --button-content-color: var(--button-default-text-color);
-    --button-border-color: var(--accent-color);
-    --button-background-color: var(--accent-color);
-    --button-shadow: none;
-
-    --button-hover-content-color: var(--button-content-color);
-    --button-hover-border-color: var(--button-hover-background-color);
-    --button-hover-background-color: var(--accent-color-light);
-    --button-hover-shadow: var(--button-default-shadow-params) var(--shadow-color-light);
-
-    --button-focus-content-color: var(--button-hover-content-color);
-    --button-focus-border-color: var(--button-hover-border-color);
-    --button-focus-background-color: var(--button-hover-background-color);
-    --button-focus-shadow: var(--button-hover-shadow);
-
-    --button-focus-visible-content-color: var(--button-focus-content-color);
-    --button-focus-visible-border-color: var(--button-focus-border-color);
-    --button-focus-visible-background-color: var(--button-focus-background-color);
-    --button-focus-visible-shadow: var(--button-focus-shadow);
-
-    --button-active-content-color: var(--button-content-color);
-    --button-active-border-color: var(--button-active-background-color);
-    --button-active-background-color: var(--accent-color-lighter);
-    --button-active-shadow: var(--button-default-shadow-params) var(--shadow-color);
-
-    --button-disabled-content-color: var(--button-default-text-color);
-    --button-disabled-border-color: var(--disabled-color);
-    --button-disabled-background-color: var(--disabled-color);
-    --button-disabled-shadow: none;
-
-    --button-current-content-color: var(--button-content-color);
-    --button-current-border-color: var(--button-border-color);
-    --button-current-background-color: var(--button-background-color);
-    --button-current-shadow: var(--button-shadow);
-
-    --button-padding-vertical: 0.5em;
-    --button-padding-horizontal: 1em;
-
-    border-width: var(--thin-border-size);
-    border-style: solid;
-    border-radius: var(--button-border-radius);
-    padding: var(--button-padding-vertical) var(--button-padding-horizontal);
-    font-weight: bold;
-    font-size: inherit;
-    font-family: inherit;
+    background-position: right calc(10em / var(--font-size-no-units)) center;
+    background-color: var(--input-background-color);
+    background-size: var(--material-arrow-dimension2) var(--material-arrow-dimension1);
     cursor: pointer;
-    transition:
-        background-color var(--animation-duration) ease-in-out,
-        box-shadow var(--animation-duration) ease-in-out,
-        border-color var(--animation-duration) ease-in-out;
-    -webkit-tap-highlight-color: transparent;
-
-    color: var(--button-current-content-color);
-    border-color: var(--button-current-border-color);
-    background-color: var(--button-current-background-color);
-    box-shadow: var(--button-current-shadow);
+    color: var(--text-color);
+    font-size: var(--input-font-size);
+    transition: border-color var(--animation-duration) ease-in-out, box-shadow var(--animation-duration) ease-in-out;
 }
-button:hover,
-.button:hover {
-    --button-current-content-color: var(--button-hover-content-color);
-    --button-current-border-color: var(--button-hover-border-color);
-    --button-current-background-color: var(--button-hover-background-color);
-    --button-current-shadow: var(--button-hover-shadow);
-}
-button:focus,
-.button:focus {
-    --button-current-content-color: var(--button-focus-content-color);
-    --button-current-border-color: var(--button-focus-border-color);
-    --button-current-background-color: var(--button-focus-background-color);
-    --button-current-shadow: var(--button-focus-shadow);
 
+
+select:hover {
+    border-color: var(--wanchan-purple-light);
+}
+
+
+select:focus {
     outline: none;
+    border-color: var(--wanchan-purple);
+    box-shadow: 0 0 0 2px var(--accent-color-transparent25);
 }
-button:active,
-.button:active {
-    --button-current-content-color: var(--button-active-content-color);
-    --button-current-border-color: var(--button-active-border-color);
-    --button-current-background-color: var(--button-active-background-color);
-    --button-current-shadow: var(--button-active-shadow);
+
+
+/* Light mode overrides for select */
+:root:not([data-theme=dark]) select:hover {
+    border-color: var(--wanchan-purple-light);
 }
-button:focus:not(:focus-visible),
-.button:focus:not(:focus-visible) {
-    --button-current-content-color: var(--button-content-color);
-    --button-current-border-color: var(--button-border-color);
-    --button-current-background-color: var(--button-background-color);
-    --button-current-shadow: var(--button-shadow);
+
+
+:root:not([data-theme=dark]) select:focus {
+    border-color: var(--wanchan-purple);
 }
-button:focus-visible,
-.button:focus-visible {
-    --button-current-content-color: var(--button-focus-visible-content-color);
-    --button-current-border-color: var(--button-focus-visible-border-color);
-    --button-current-background-color: var(--button-focus-visible-background-color);
-    --button-current-shadow: var(--button-focus-visible-shadow);
+
+
+/* Dark mode overrides for select */
+:root[data-theme=dark] select:hover {
+    border-color: var(--wanchan-amber-light);
 }
-button:hover:focus-visible,
-button:hover:not(:focus-visible),
-.button:hover:focus-visible,
-.button:hover:not(:focus-visible) {
-    --button-current-content-color: var(--button-hover-content-color);
-    --button-current-border-color: var(--button-hover-border-color);
-    --button-current-background-color: var(--button-hover-background-color);
-    --button-current-shadow: var(--button-hover-shadow);
+
+
+:root[data-theme=dark] select:focus {
+    border-color: var(--wanchan-amber);
 }
-button:focus:focus-visible,
-.button:focus:focus-visible {
-    --button-current-content-color: var(--button-focus-visible-content-color);
-    --button-current-border-color: var(--button-focus-visible-border-color);
-    --button-current-background-color: var(--button-focus-visible-background-color);
-    --button-current-shadow: var(--button-focus-visible-shadow);
+
+
+/* Basic styling for options (browser support varies) */
+select option {
+    background-color: var(--background-color-light);
+    color: var(--text-color);
+    padding: 0.5em;
 }
-button:active:focus-visible,
-button:active:not(:focus-visible),
-.button:active:focus-visible,
-.button:active:not(:focus-visible) {
-    --button-current-content-color: var(--button-active-content-color);
-    --button-current-border-color: var(--button-active-border-color);
-    --button-current-background-color: var(--button-active-background-color);
-    --button-current-shadow: var(--button-active-shadow);
+
+/* h1 themed colors */
+h1 {
+    color: var(--wanchan-purple);
 }
-button:disabled,
-.button:disabled {
-    cursor: default;
-}
-button:disabled,
-button:disabled:focus,
-button:disabled:hover,
-button:disabled:active,
-.button:disabled,
-.button:disabled:focus,
-.button:disabled:hover,
-.button:disabled:active {
-    --button-current-content-color: var(--button-disabled-content-color);
-    --button-current-border-color: var(--button-disabled-border-color);
-    --button-current-background-color: var(--button-disabled-background-color);
-    --button-current-shadow: var(--button-disabled-shadow);
-}
-button:disabled:focus-visible,
-.button:disabled:focus-visible {
-    --button-current-content-color: var(--button-disabled-content-color);
-    --button-current-border-color: var(--button-disabled-border-color);
-    --button-current-background-color: var(--button-disabled-background-color);
-    --button-current-shadow: var(--button-disabled-shadow);
+
+:root[data-theme=dark] h1 {
+    color: var(--wanchan-amber);
 }
