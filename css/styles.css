@@ -288,6 +288,25 @@ a {
     box-shadow: 0 4px 16px var(--popup-shadow-color);
 }
 
+/* Flag Icons */
+.flag-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4px;
+    border-radius: 2px;
+    width: 32px;
+    height: auto;
+}
+
+.flag-icon.flag-jp {
+    border: 1px solid var(--border-color);
+}
+
+.flag-icon.flag-lg {
+    width: 48px;
+    border-radius: 4px;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     display: flex;
