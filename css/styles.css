@@ -177,6 +177,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     transition: --bg-primary 0.6s ease, --bg-deep 0.6s ease, color 0.6s ease;
+    animation: page-fade-in 1s ease both;
 }
 
 :root[data-theme="light"] body {
@@ -807,11 +808,6 @@ a {
     animation: arrow-pulse 2s ease-in-out infinite;
 }
 
-@keyframes arrow-pulse {
-    0%, 100% { transform: translateX(0); opacity: 1; }
-    50% { transform: translateX(8px); opacity: 0.7; }
-}
-
 .language-examples {
     display: flex;
     flex-direction: column;
@@ -886,56 +882,9 @@ a {
     animation: cursor-to-kanji 4s ease-in-out infinite;
 }
 
-@keyframes cursor-to-tag {
-    0% {
-        transform: translate(23em, -4rem);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    40% {
-        /* Move to the Netaisyklinga tag position (approximately) */
-        transform: translate(0, 0);
-    }
-    51% {
-        transform: translate(0, 0) scale(0.75);
-    }
-    55% {
-        /* Small click animation */
-        transform: translate(0, 0) scale(1.1);
-    }
-    60% {
-        transform: translate(0, 0);
-    }
-    90% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 0;
-    }
-}
-
 /* Highlight effect on netaisyklinga tag when cursor hovers */
 .highlight-animation {
     animation: tag-highlight 4s ease-in-out infinite;
-}
-
-@keyframes tag-highlight {
-    0%, 35% {
-        box-shadow: none;
-        background-color: transparent;
-    }
-    45%, 90% {
-        box-shadow: 0 0 12px 3px var(--tag-highlight-glow);
-        background-color: var(--tag-highlight-bg);
-    }
-    100% {
-        box-shadow: none;
-        background-color: transparent;
-    }
 }
 
 /* Animated Footer Tooltip - Inside popup, overlays content */
@@ -1003,36 +952,6 @@ a {
     background: var(--tooltip-close-hover-bg);
     color: var(--text-primary);
 }
-
-/* Tooltip reveal animation - synced with cursor animation (4s)
-   Cursor timeline:
-   - 0-10%: Cursor appears
-   - 40-50%: Cursor arrives at tag
-   - 55%: Cursor "clicks" (scale animation)
-   - 60%: Click completes
-   - 90-100%: Cursor fades out
-   
-   Tooltip slides up from bottom inside popup after click
-*/
-@keyframes tooltip-reveal {
-    0%, 55% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    65% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    90% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    95%, 100% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-}
-
 
 /* Features Section */
 .features-section {
@@ -1191,27 +1110,93 @@ body.theme-transitioning-in * {
         border-color 0.6s ease !important;
 }
 
-@keyframes slide-out-right {
-    0% { transform: translateX(0); opacity: 1; }
-    100% { transform: translateX(100px); opacity: 0; }
-}
-
-@keyframes slide-in-left {
-    0% { transform: translateX(-100px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes roll-out-right {
-    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateX(100px) rotate(360deg); opacity: 0; }
-}
-
-@keyframes roll-in-left {
-    0% { transform: translateX(-100px) rotate(-360deg); opacity: 0; }
-    100% { transform: translateX(0) rotate(0deg); opacity: 1; }
-}
-
 /* Animations */
+@keyframes arrow-pulse {
+    0%, 100% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(8px); opacity: 0.7; }
+}
+
+@keyframes cursor-to-tag {
+    0% {
+        transform: translate(23em, -4rem);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        /* Move to the Netaisyklinga tag position (approximately) */
+        transform: translate(0, 0);
+    }
+    51% {
+        transform: translate(0, 0) scale(0.75);
+    }
+    55% {
+        /* Small click animation */
+        transform: translate(0, 0) scale(1.1);
+    }
+    60% {
+        transform: translate(0, 0);
+    }
+    90% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes tag-highlight {
+    0%, 35% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    45%, 90% {
+        box-shadow: 0 0 12px 3px var(--tag-highlight-glow);
+        background-color: var(--tag-highlight-bg);
+    }
+    100% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
+/* Tooltip reveal animation - synced with cursor animation (4s)
+   Cursor timeline:
+   - 0-10%: Cursor appears
+   - 40-50%: Cursor arrives at tag
+   - 55%: Cursor "clicks" (scale animation)
+   - 60%: Click completes
+   - 90-100%: Cursor fades out
+   
+   Tooltip slides up from bottom inside popup after click
+*/
+@keyframes tooltip-reveal {
+    0%, 55% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    65% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    95%, 100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes page-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 @keyframes float {
 
     0%,
@@ -1246,6 +1231,26 @@ body.theme-transitioning-in * {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+@keyframes slide-out-right {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100px); opacity: 0; }
+}
+
+@keyframes slide-in-left {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes roll-out-right {
+    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateX(100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes roll-in-left {
+    0% { transform: translateX(-100px) rotate(-360deg); opacity: 0; }
+    100% { transform: translateX(0) rotate(0deg); opacity: 1; }
 }
 
 /* Responsive */
