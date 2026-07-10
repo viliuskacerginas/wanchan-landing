@@ -253,6 +253,13 @@ a {
     gap: 12px;
 }
 
+.logo:hover .logo-text {
+    background: var(--text-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .logo-icon {
     width: 36px;
     height: 36px;
@@ -1469,4 +1476,22 @@ body.theme-transitioning-in * {
     background: #4ade80;
     color: #064e3b;
     border-color: #4ade80;
+}
+
+/* Active nav link state */
+.nav-link-active {
+    color: var(--accent) !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
 }
