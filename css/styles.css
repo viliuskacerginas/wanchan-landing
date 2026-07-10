@@ -93,6 +93,7 @@
     --tooltip-close-hover-bg: rgba(0, 0, 0, 0.06);
     --footer-border: var(--border-color);
     --headword-popular-color: var(--wanchan-purple);
+    --headword-font-size: calc(0.99em * var(--headword-font-size-no-units));
 }
 
 /* ============ DARK MODE ============ */
@@ -167,6 +168,9 @@
 
 html {
     scroll-behavior: smooth;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    box-sizing: border-box;
 }
 
 body {
