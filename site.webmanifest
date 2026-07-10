@@ -1,0 +1,17 @@
+{
+    "name": "Wanchan",
+    "short_name": "Wanchan",
+    "description": "Iššokantis Žodynas - Nemokamas naršyklės plėtinys Wanchan Iššokantis Žodynas kalbos mokymuisi",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#f3f4f6",
+    "theme_color": "#7c3aed",
+    "lang": "lt",
+    "icons": [
+        {
+            "src": "assets/brand/wanchan.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
