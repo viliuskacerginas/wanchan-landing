@@ -177,7 +177,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     transition: --bg-primary 0.6s ease, --bg-deep 0.6s ease, color 0.6s ease;
-    animation: page-fade-in 1s ease both;
+    animation: page-fade-in 0.8s ease both;
 }
 
 :root[data-theme="light"] body {
@@ -252,13 +252,6 @@ a {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.logo:hover .logo-text {
-    background: var(--text-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .logo-icon {
@@ -1359,6 +1352,15 @@ body.theme-transitioning-in * {
     .features-grid {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+}
+
+@media (hover: hover) and (min-width: 901px) {
+    .logo:hover .logo-text {
+        background: var(--text-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 }
 
