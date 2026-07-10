@@ -1362,3 +1362,111 @@ body.theme-transitioning-in * {
         padding: 10px 16px;
     }
 }
+/* Article/Guide Layout */
+.guide-container {
+    max-width: 800px;
+    margin: 120px auto 60px;
+    padding: 0 24px;
+}
+
+.guide-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--text-heading-gradient-start) 0%, var(--text-heading-gradient-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.guide-content h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.guide-content p, .guide-content li {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.guide-content ul, .guide-content ol {
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+
+.guide-content li {
+    margin-bottom: 8px;
+}
+
+.guide-content code {
+    background: var(--example-pair-bg);
+    color: var(--text-primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    border: 1px solid var(--border-color);
+}
+
+.guide-alert {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+    box-shadow: 0 4px 12px var(--popup-shadow-color);
+}
+.guide-alert strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Code Box Styles */
+.code-box {
+    position: relative;
+    background: var(--example-pair-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    overflow-x: auto;
+}
+
+.code-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: monospace;
+    color: var(--text-primary);
+    font-size: 0.9em;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.copy-btn.success {
+    background: #4ade80;
+    color: #064e3b;
+    border-color: #4ade80;
+}

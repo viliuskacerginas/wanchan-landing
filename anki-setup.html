@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="lt" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kaip susieti Wanchan su Anki ir paspartinti japonų kalbos mokymąsi. Žingsnis po žingsnio vadovas.">
+    <title>Kaip susieti Wanchan su Anki - Gidas</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/brand/wanchan.svg">
+
+    <!-- Landing Page Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <script>
+        const savedTheme = localStorage.getItem('wanchan-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/brand/wanchan.svg" alt="Wanchan" class="logo-icon" id="main-logo">
+                    <span class="logo-text">Wanchan</span>
+                </a>
+            </div>
+            <button type="button" class="mobile-menu-toggle" aria-label="Atidaryti meniu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav class="nav-links">
+                <a href="index.html#features" class="nav-link">Funkcijos</a>
+                <a href="index.html#download" class="nav-link nav-link-cta">Atsisiųsti</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="page-content">
+        <main class="guide-container">
+            <article class="guide-content">
+                <h1>Kaip susieti Wanchan su Anki ir paspartinti japonų kalbos mokymąsi</h1>
+                <p>Skaityti japoniškai gali būti sudėtinga, tačiau <strong>Wanchan</strong> plėtinys šį procesą gerokai palengvina. Vis dėlto, net ir turint patogų žodyną, tenka mokytis ir kartotis naujus žodžius. Geroji žinia ta, kad Wanchan leidžia kurti Anki korteles (angl. <em>flashcards</em>) vos vienu mygtuko paspaudimu!</p>
+                <p>Šiame vadove sužinosite, kaip greitai ir be vargo paruošti Wanchan bei Anki, kad sukurtumėte tobulą mokymosi aplinką. Pradėkime!</p>
+
+                <h2>Žingsnis 1: Wanchan paruošimas</h2>
+                <p>Pirmiausia norime išjungti pasveikinimo langą, kuris įkyriai pasirodo kiekvieną kartą atidarius naršyklę.</p>
+                <ol>
+                    <li>Atidarykite Wanchan <strong>nustatymus</strong>.</li>
+                    <li>Raskite skiltį <strong>Bendra</strong>.</li>
+                    <li>Išjunkite parinktį <strong>Rodyti pradžios vadova naršyklės paleidimo metu</strong>.</li>
+                </ol>
+
+                <h2>Žingsnis 2: Žodynų įdiegimas</h2>
+                <p>Dabar turime pridėti žodynus. Pagrindinius žodynus rasite skiltyje <strong>Žodynai</strong> pasirinkę (<strong>Gauti rekomenduojamus žodynus</strong>), tačiau galite naudoti ir kitus jums patinkančius žodynus.</p>
+                <div class="guide-alert">
+                    <strong>SVARBU</strong>
+                    <ol>
+                        <li>Žodynus galite atsisiųsti ir savarankiškai. Parsisiuntę žodynų archyvus (<code>.zip</code> formatu), neišskleiskite jų! Wanchan nuskaito pačius archyvus.</li>
+                        <li>Japonų–anglų kalbų žodynų vertimas gali būti sutrikęs, todėl tam geriau naudokite „Yomitan“ papildinį.</li>
+                    </ol>
+                </div>
+
+                <ol>
+                    <li>Nustatymuose atidarykite kortelę <strong>Žodynai</strong>.</li>
+                    <li>Paspauskite <strong>Gauti rekomenduojamus žodynus</strong>.</li>
+                    <li>Išsirinkite norimus parsisiųsti žodynus ir spustelėkite <strong>Atsisiųsti</strong>.</li>
+                </ol>
+                <p>(Jeigu turite daugiau nei vieną terminų žodyną ir norite nustatyti jų atvaizdavimo eiliškumą, tai galite padaryti skiltyje <strong>Konfigūruoti įdiegtus ir įgalintus žodynus</strong>)</p>
+
+                <h2>Žingsnis 3: Anki priedų įdiegimas</h2>
+                <p>Kad Wanchan galėtų automatiškai siųsti žodžius į jūsų Anki programą, turite įdiegti svarbų priedą <strong>AnkiConnect:</strong></p>
+                <ol>
+                    <li>Atidarykite Anki programą ir eikite į <strong>Tools</strong> &gt; <strong>Add-ons</strong>.</li>
+                    <li>Paspauskite <strong>Get Add-ons...</strong></li>
+                    <li>Norėdami įdiegti <strong>AnkiConnect</strong>, įveskite kodą: <code>2055492159</code></li>
+                    <li><strong>Rekomenduojama:</strong> Dar kartą paspauskite <strong>Get Add-ons...</strong> ir įdiekite <strong>Edit Field During Review</strong> įvesdami kodą: <code>385888438</code>
+                        <p>(Greitas redagavimas: Paspaudus ant norimo lauko kartu laikant <strong>Ctrl</strong> klavišą („Mac“ sistemoje – <strong>Cmd</strong>), teksto laukas tampa aktyvus ir jį galima keisti)</p>
+                    </li>
+                    <li>Perkraukite Anki programą.</li>
+                </ol>
+
+                <h2>Žingsnis 4: Anki kaladės ir šablono sukūrimas</h2>
+                <p>Sukursime kortelės formatą, idealiai tinkantį naujų žodžių importavimui.</p>
+                <ol>
+                    <li>Pagrindiniame Anki lange paspauskite <strong>Create Deck</strong> ir pavadinkite kaladę, pvz., „Japonų kalba“.</li>
+                    <li>Eikite į <strong>Tools</strong> &gt; <strong>Manage Note Types</strong>.</li>
+                    <li>Paspauskite <strong>Add</strong> ir pasirinkite <strong>Add: Basic (optional reversed card)</strong>.</li>
+                    <li>Pasirinkite naująjį šabloną ir spustelėkite <strong>Fields</strong>.</li>
+                    <li>Pridėkite šiuos laukus (ištrinkite senus, jei tokių yra):
+                        <ul>
+                            <li><code>Front</code></li>
+                            <li><code>Back</code></li>
+                            <li><code>Add Reverse</code></li>
+                            <li><code>Sentence</code></li>
+                            <li><code>Sentence no word</code></li>
+                            <li><code>Reading</code></li>
+                            <li><code>Kanji</code></li>
+                        </ul>
+                    </li>
+                    <li>Lange spustelėkite mygtuką <strong>Cards...</strong> ir į atitinkamus laukelius įklijuokite šiuos kodo šablonus:</li>
+                </ol>
+
+                <h3>1. Pagrindinė kortelė: Iš Japonų į Jūsų kalbą (Front Template)</h3>
+                <div class="code-box">
+                    <button type="button" class="copy-btn" data-target="code-jp-front">Kopijuoti</button>
+                    <pre id="code-jp-front"><code>&lt;div class=frontbg&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 48px;'&gt;{{edit:Front}}&lt;/div&gt;
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Sentence}}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>2. Pagrindinė kortelė (Back Template)</h3>
+                <div class="code-box">
+                    <button type="button" class="copy-btn" data-target="code-jp-back">Kopijuoti</button>
+                    <pre id="code-jp-back"><code>&lt;div class=frontbg&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 48px;'&gt;{{edit:Reading}}&lt;/div&gt;
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Sentence}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=backbg&gt;
+{{edit:Back}}
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Kanji}}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>3. Kortelių Stilius (Styling)</h3>
+                <div class="code-box">
+                    <button type="button" class="copy-btn" data-target="code-styling">Kopijuoti</button>
+                    <pre id="code-styling"><code>.card {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'BIZ UDGothic', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.6;
+  padding: 16px;
+
+  /* Wanchan Design (Light Mode Default) */
+  --card-bg-app: #f3f4f6;
+  --card-shadow: 0 10px 25px rgba(124, 58, 237, 0.08);
+  --header-gradient: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  --header-text: #ffffff;
+  --body-bg: #ffffff;
+  --body-text: #1f2937;
+  --accent-color: #7c3aed;
+  --border-color: #e5e7eb;
+  background-color: var(--card-bg-app);
+  color: var(--body-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card Dark Mode Support */
+.nightMode.card,
+.night_mode.card,
+.nightMode .card,
+.night_mode .card {
+  --card-bg-app: #111827;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --header-gradient: linear-gradient(135deg, #f5a623 0%, #d97706 100%);
+  --header-text: #111827;
+  --body-bg: #1f2937;
+  --body-text: #f9fafb;
+  --accent-color: #f5a623;
+  --border-color: #374151;
+}
+
+.frontbg {
+  background: var(--header-gradient);
+  color: var(--header-text);
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  left: 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.backbg {
+  position: relative;
+  top: -8px;
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  padding: 24px 30px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  font-size: 22px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+#answer {
+  border: none;
+  border-top: 1px dashed var(--border-color);
+  margin: 16px 0;
+}</code></pre>
+                </div>
+
+                <h3>4. Atvirkštinė kortelė: Iš Jūsų kalbos į Japonų (Reverse Card - Front)</h3>
+                <div class="code-box">
+                    <button type="button" class="copy-btn" data-target="code-rev-front">Kopijuoti</button>
+                    <pre id="code-rev-front"><code>{{#Add Reverse}}&lt;div class=frontbg&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 48px;'&gt;{{edit:Back}}&lt;/div&gt;
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Sentence no word}}&lt;/div&gt;
+&lt;/div&gt;{{/Add Reverse}}</code></pre>
+                </div>
+
+                <h3>5. Atvirkštinė kortelė (Reverse Card - Back)</h3>
+                <div class="code-box">
+                    <button type="button" class="copy-btn" data-target="code-rev-back">Kopijuoti</button>
+                    <pre id="code-rev-back"><code>&lt;div class=frontbg&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 48px;'&gt;{{edit:Back}}&lt;/div&gt;
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Sentence}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=backbg&gt;
+{{edit:Reading}}
+&lt;br&gt;
+&lt;div style='font-family: BIZ UDGothic; font-size: 24px;'&gt;{{edit:Kanji}}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h2>Žingsnis 5: Wanchan susiejimas su Anki</h2>
+                <p>Paskutinis žingsnis – nustatyti Wanchan, kad jis vienu paspaudimu kurtų mūsų norimas korteles.</p>
+                <ol>
+                    <li>Grįžkite į Wanchan nustatymus ir atidarykite skiltį <strong>Anki</strong>.</li>
+                    <li>Paspauskite <strong>Įgalinti Anki integraciją</strong>.</li>
+                    <li>Paspauskite <strong>Konfigūruoti Anki korteles</strong>.</li>
+                    <li><strong>Išraiška</strong> skiltyje, išskleidžiamuosiuose meniu pasirinkite savo sukurtą kaladę (Deck) ir kortelės modelį (Model).</li>
+                    <li>Priskirkite šias reikšmes savo sukurtiems laukams (galite jas nukopijuoti):
+                        <ul>
+                            <li><strong>Priekis</strong>: <div class="code-box">
+                                    <button type="button" class="copy-btn" data-target="code-settings-priekis">Kopijuoti</button>
+                                    <pre id="code-settings-priekis"><code>{expression}</code></pre>
+                                </div>
+                            </li>
+                            <li><strong>Atgal</strong>: <div class="code-box">
+                                    <button type="button" class="copy-btn" data-target="code-settings-atgal">Kopijuoti</button>
+                                    <pre id="code-settings-atgal"><code>{glossary-brief}</code></pre>
+                                </div>
+                            </li>
+                            <li><strong>Pridėti atvirkštinę</strong>: Palikite tuščią (sukurs tik kortelę iš japonų kalbos) arba įrašykite <code>y</code> (sukurs ir atvirkštinę).</li>
+                            <li>
+                                <strong>Sakinys</strong>:
+                                <div class="code-box">
+                                    <button type="button" class="copy-btn" data-target="code-settings-sakinys">Kopijuoti</button>
+                                    <pre id="code-settings-sakinys"><code>{cloze-prefix}({cloze-body}){cloze-suffix}</code></pre>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Sakinys be žodžio</strong>:
+                                <div class="code-box">
+                                    <button type="button" class="copy-btn" data-target="code-settings-sakinys-be-zodzio">Kopijuoti</button>
+                                    <pre id="code-settings-sakinys-be-zodzio"><code>{cloze-prefix}（・・・）{cloze-suffix}</code></pre>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Skaitymas</strong>:
+                                <div class="code-box">
+                                    <button type="button" class="copy-btn" data-target="code-settings-skaitymas">Kopijuoti</button>
+                                    <pre id="code-settings-skaitymas"><code>{furigana}</code></pre>
+                                </div>
+                            </li>
+                            <li><strong>Kanji</strong>: Palikite tuščią.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>Pabaiga</h2>
+                <p>Štai ir viskas! Dabar bet kuriame interneto puslapyje radę nepažįstamą žodį ir iššaukę Wanchan langelį, tiesiog paspauskite mažą pliuso (➕) ikonėlę. Jūsų tobulai suformatuota Anki kortelė bus sukurta automatiškai.</p>
+                <p>Linkiu sklandaus ir motyvuojančio japonų kalbos mokymosi!</p>
+            </article>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>Nuoširdžiai dėkojame originaliems „Yomitan“ ir „Yomichan“ kūrėjams.<br> Platinama pagal <a class="highlight-text" href="https://github.com/viliuskacerginas/wanchan/blob/master/LICENSE">GPL-3.0 licencija</a>
+            <a class="highlight-text" href="https://github.com/viliuskacerginas/wanchan/blob/master/PRIVACY-POLICY.md">Privatumo politika</a><br>&copy; Copyright 2026 Vilius Kačerginas</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle (Fixed bottom-left) -->
+    <button type="button" id="theme-toggle" class="theme-toggle fixed-theme-toggle" aria-label="Perjungti temą">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

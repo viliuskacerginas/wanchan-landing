@@ -142,4 +142,32 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
+
+    // ===== COPY TO CLIPBOARD =====
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            if (!targetId) return;
+            
+            const targetEl = document.getElementById(targetId);
+            if (!targetEl) return;
+
+            // Copy text
+            navigator.clipboard.writeText(targetEl.textContent).then(() => {
+                // Show success state
+                const originalText = btn.textContent;
+                btn.textContent = 'Nukopijuota!';
+                btn.classList.add('success');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            }).catch(err => {
+                console.error('Kopijuoti nepavyko:', err);
+                btn.textContent = 'Klaida';
+                setTimeout(() => btn.textContent = 'Kopijuoti', 2000);
+            });
+        });
+    });
 });
