@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
 
     // Get saved theme or default to light
-    const savedTheme = localStorage.getItem('wanchan-theme') || 'light';
+    let savedTheme = 'light';
+    try {
+        savedTheme = localStorage.getItem('wanchan-theme') || 'light';
+    } catch (e) {
+        console.warn('localStorage neprieinamas');
+    }
     setTheme(savedTheme, false);
 
     if (themeToggle) {
@@ -28,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 2. Change the actual theme colors immediately so they transition smoothly while sliding out
             root.setAttribute('data-theme', newTheme);
-            localStorage.setItem('wanchan-theme', newTheme);
+            try {
+                localStorage.setItem('wanchan-theme', newTheme);
+            } catch (e) {
+                console.warn('localStorage neprieinamas');
+            }
             
             setTimeout(() => {
                 // 3. Halfway through (when content is invisible/slid out), swap specific elements
@@ -94,13 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== SMOOTH SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+            
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            } catch (err) {
+                console.warn('Neteisingas selektorius:', href);
             }
         });
     });
@@ -152,22 +168,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetEl = document.getElementById(targetId);
             if (!targetEl) return;
 
-            // Copy text
-            navigator.clipboard.writeText(targetEl.textContent).then(() => {
-                // Show success state
-                const originalText = btn.textContent;
-                btn.textContent = 'Nukopijuota!';
-                btn.classList.add('success');
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.classList.remove('success');
-                }, 2000);
-            }).catch(err => {
-                console.error('Kopijuoti nepavyko:', err);
+            const originalText = btn.textContent;
+            
+            if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                console.error('Clipboard API neprieinama');
                 btn.textContent = 'Klaida';
-                setTimeout(() => btn.textContent = 'Kopijuoti', 2000);
-            });
+                setTimeout(() => btn.textContent = originalText, 2000);
+                return;
+            }
+
+            // Copy text
+            try {
+                navigator.clipboard.writeText(targetEl.textContent).then(() => {
+                    // Show success state
+                    btn.textContent = 'Nukopijuota!';
+                    btn.classList.add('success');
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('success');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Kopijuoti nepavyko:', err);
+                    btn.textContent = 'Klaida';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                });
+            } catch (err) {
+                console.error('Kopijuoti nepavyko (sinchroninė klaida):', err);
+                btn.textContent = 'Klaida';
+                setTimeout(() => btn.textContent = originalText, 2000);
+            }
         });
     });
 });
