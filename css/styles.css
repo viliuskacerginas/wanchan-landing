@@ -870,18 +870,13 @@ a {
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
     z-index: 100;
     pointer-events: none;
-    animation: cursor-to-tag 4s ease-in-out infinite;
     margin-left: 0.625rem;
     margin-top: 0.625rem;
 }
 
-.animated-kanji {
-    animation: cursor-to-kanji 4s ease-in-out infinite;
-}
-
 /* Highlight effect on netaisyklinga tag when cursor hovers */
 .highlight-animation {
-    animation: tag-highlight 4s ease-in-out infinite;
+    /* Animation synced with cursor */
 }
 
 /* Animated Footer Tooltip - Inside popup, overlays content */
@@ -898,11 +893,22 @@ a {
     background: var(--popup-bg);
     border-top: 1px solid var(--border-color);
     border-radius: 0 0 16px 16px;
-    /* Animation synced with cursor */
     opacity: 0;
     transform: translateY(100%);
-    animation: tooltip-reveal 4s ease-in-out infinite;
     z-index: 200;
+}
+
+/* Synchronized Popup Demo Animations - Controlled via JS IntersectionObserver */
+.popup-demo-wrapper.is-visible .animated-cursor {
+    animation: cursor-to-tag 4s ease-in-out infinite;
+}
+
+.popup-demo-wrapper.is-visible .highlight-animation {
+    animation: tag-highlight 4s ease-in-out infinite;
+}
+
+.popup-demo-wrapper.is-visible .animated-footer-tooltip {
+    animation: tooltip-reveal 4s ease-in-out infinite;
 }
 
 .tooltip-content {

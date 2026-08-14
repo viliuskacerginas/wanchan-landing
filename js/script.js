@@ -159,6 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
+    // ===== POPUP DEMO SYNCHRONIZED ANIMATIONS =====
+    const popupDemoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.popup-demo-wrapper').forEach(wrapper => {
+        popupDemoObserver.observe(wrapper);
+    });
+
     // ===== COPY TO CLIPBOARD =====
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
